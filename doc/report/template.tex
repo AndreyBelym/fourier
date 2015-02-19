@@ -1,0 +1,116 @@
+\documentclass[cp1251,nocolumnxxxi,nocolumnxxxii]{eskdtext}
+\usepackage{eskdtotal}
+\renewcommand{\tiny}{\fontsize{12}{14}\fontfamily{ftm}\linespread{1.0}\selectfont}
+\ESKDcolumnI{\tiny Пояснительная записка к 
+курсовой работе по курсу 
+«Программирование на ЯВУ» по теме 
+«Быстрое преобразование Фурье»}
+\ESKDcolumnII{Вариант №4}
+\ESKDcolumnIX{ТулГУ гр. 220601}
+\ESKDcolumnXIfI{Белым А.А.}
+\ESKDcolumnXIfII{Сулимова В.В.}
+\pagestyle{empty}
+\usepackage{layout}
+\usepackage{amsmath}
+%\usepackage[left=2.5cm, right=1cm, bottom=1cm, top=1cm]{geometry}
+\parindent=1.0cm
+\footskip=0.2cm
+%\parskip=-0.8cm
+\usepackage[cp1251]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian]{babel}
+%\usepackage{pscyr}
+%\usepackage[compact,center,small]{titlesec}
+%\titlelabel{}
+%\titlespacing{\section}{0.0cm}{-0.3cm}{-0.5cm}
+\usepackage{listings}
+\usepackage{graphicx}
+%\usepackage{ccaption}
+\usepackage{tabularx}
+\usepackage{array}
+%\captiondelim{ - }
+\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\normalfont}{\fontsize{14}{20}\fontfamily{ftm}\linespread{1.25}\selectfont}
+\renewcommand{\thesection}{\arabic{section}.} 
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\contentsname}{} 
+\ESKDsectStyle{section}{\normalfont\fontfamily{far}\selectfont\bfseries\centering}
+\ESKDsectStyle{subsection}{\normalfont\fontfamily{ftm}\selectfont\bfseries\centering}
+\ESKDsectSkip{subsection}{1.5cm}{0.5cm}
+\renewcommand{\maketitle}[1]{
+\begin{titlepage}
+\begin{center}\linespread{1}\parskip=0.0cm\normalfont
+\ESKDthisStyle{empty}
+Министерство образования и науки РФ
+
+ФГБПОУ ВПО Тульский государственный университитет
+
+\vskip 0pt plus 0.5fil
+КАФЕДРА АВТОМАТИКИ И ТЕЛЕМЕХАНИКИ
+
+\vfill
+\textbf{#1}
+
+\vskip 2cm
+Пояснительная записка 
+
+к курсовой работе
+
+
+по курсу «Программирование на ЯВУ»
+
+\vfill
+%Вариант № 4
+
+\vfill
+\begin{tabular*}{\textwidth}{ll@{\extracolsep{\fill}}c@{\extracolsep{0pt}}l}
+Выполнил: & студент группы 220601&&Белым~А.А.\\ \cline{3-3}
+								&&\tiny{(подпись)}& 	\\
+Проверил: & к. ф.-м. н., доцент &&Сулимова В.В.\\ \cline{3-3}
+								&&\tiny{(подпись)}& 	\\
+\end{tabular*}
+\vfill
+Тула 2011
+\end{center}
+\end{titlepage}
+}
+\usepackage{float}
+\newcommand{\pic}[4]{
+\renewcommand{\figurename}{\tinyРисунок}
+%\suppressfloats[p]
+\begin{figure}[#4]
+\center
+\includegraphics{#1}
+\caption{\tiny #2}\label{#3}
+\end{figure}
+}
+\newcommand{\tabln}[1]{#1 \\ \hline}
+\newcommand{\tabl}[4]{
+\renewcommand{\tablename}{\hfill \tiny Таблица}
+\begin{table}[#4]
+\caption{\tiny #1}\label{#3}
+\center\normalfont\linespread{1.0}\selectfont
+\vskip -0.5cm 
+\begin{tabular}{|c|c|l|} \hline
+{\bfseries имя}&{\bfseries тип} &\multicolumn{1}{c|}{\bfseries предназначение}  \\ \hline
+#2
+\end{tabular}
+\end{table}
+}
+\newcommand{\ftab}[1]{
+ представлены в таблице \ref{#1}
+}
+\newcommand{\tabbox}[2]{\parbox[t]{#1}{\linespread{0.8}\selectfont #2}}
+\newcommand{\prog}[2]{
+\fontencoding{T2A}
+
+\lstset{basicstyle=\fontsize{10}{12}\fontfamily{fcr}\linespread{1.0}\selectfont,identifierstyle=,keywordstyle=\bfseries,commentstyle=\itshape,stringstyle=\slshape}
+\lstinputlisting[inputencoding=cp1251,language=#1]{#2}
+}
+
+
+\makeatletter
+%\renewcommand{\@oddfoot}{{\quad\hfill\quad \thepage}}
+%\renewcommand{\@evenfoot}{{\quad\hfill\quad \thepage}}
+\makeatother
+\newcommand{\ssec}[1]{\section{#1}\hspace*{\parindent}}

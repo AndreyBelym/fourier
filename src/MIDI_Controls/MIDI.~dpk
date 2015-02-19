@@ -1,0 +1,48 @@
+package MIDI;
+
+{$R *.res}
+{$R 'midireg.dcr'}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO ON}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DESCRIPTION 'MIDI Components for Delphi 7'}
+{$IMPLICITBUILD OFF}
+
+requires
+  rtl,
+  vcl;
+
+contains
+  midireg in 'midireg.pas',
+  cmpMidiData,
+  unitMidiGlobals in 'unitMidiGlobals.pas',
+  unitMidiTrackStream in 'unitMidiTrackStream.pas',
+  unitVirtualMemory in 'unitVirtualMemory.pas',
+  cmpRiffStream in 'cmpriffStream.pas',
+  cmpMidiOutput in 'cmpMidiOutput.pas',
+  cmpMidiIterator in 'cmpMidiIterator.pas',
+  cmpPianoRoll in 'cmpPianoRoll.pas',
+  cmpKeyboard in 'cmpKeyboard.pas',
+  cmpInstrument in 'cmpInstrument.pas',
+  cmpBarControl in 'cmpBarControl.pas',
+  cmpTrackOutputs in 'cmpTrackOutputs.pas';
+
+end.

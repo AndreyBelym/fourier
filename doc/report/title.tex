@@ -1,0 +1,127 @@
+\documentclass[a4paper,12pt,russian]{article}
+\pagestyle{empty}
+\usepackage{layout}
+\usepackage{amsmath}
+\usepackage[left=2.5cm, right=1cm, bottom=1cm, top=1cm]{geometry}
+\parindent=1.0cm
+\footskip=0.5cm
+%\parskip=-0.8cm
+\usepackage[utf8x]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian,english]{babel}
+\usepackage{pscyr}
+\usepackage[compact,center,small]{titlesec}
+\titlelabel{\thesection.  }
+%\titlespacing{\section}{0.0cm}{-0.3cm}{-0.5cm}
+\usepackage{listingsutf8}
+\usepackage{graphicx}
+\usepackage{ccaption}
+\usepackage{tabularx}
+\usepackage{array}
+\captiondelim{ - }
+\renewcommand{\baselinestretch}{1.25}
+\renewcommand{\normalfont}{\fontsize{14}{20}\fontfamily{ftm}\linespread{1.25}\selectfont}
+\renewcommand{\tiny}{\fontsize{12}{14}\fontfamily{ftm}\linespread{1.0}\selectfont}
+\renewcommand{\maketitle}[1]{
+\begin{titlepage}
+\begin{center}\linespread{1}\parskip=0.0cm\normalfont
+Министерство образования и науки РФ
+
+ФГБПОУ ВПО Тульский государственный университитет
+
+\vskip 0pt plus 0.5fil
+КАФЕДРА АВТОМАТИКИ И ТЕЛЕМЕХАНИКИ
+
+\vfill
+\textbf{#1}
+
+\vskip 2cm
+Пояснительная записка 
+
+к курсовой работе
+
+
+по курсу «Программирование на ЯВУ»
+
+\vfill
+%Вариант № 4
+
+\vfill
+\begin{tabular*}{\textwidth}{ll@{\extracolsep{\fill}}c@{\extracolsep{0pt}}l}
+Выполнил: & студент группы 220601&&Белым~А.А.\\ \cline{3-3}
+								&&\tiny{(подпись)}& 	\\
+Проверил: & к. ф.-м. н., доцент &&Сулимова В.В.\\ \cline{3-3}
+								&&\tiny{(подпись)}& 	\\
+\end{tabular*}
+\vfill
+Тула 2011
+\end{center}
+\end{titlepage}
+}
+\usepackage{float}
+\newcommand{\pic}[4]{
+\renewcommand{\figurename}{Рисунок}
+%\suppressfloats[p]
+\begin{figure}[#4]
+\centering
+\includegraphics{#1}
+\caption{#2}\label{#3}
+\end{figure}
+}
+\newcommand{\tabln}[1]{#1 \\ \hline}
+\newcommand{\tabl}[4]{
+\renewcommand{\tablename}{Таблица}
+\begin{table}[#4]
+\captionstyle{\raggedleft}
+\caption{#1}\label{#3}
+\center\normalfont
+\selectlanguage{russian}
+\begin{tabular}{|c|c|l|} \hline
+\linespread{1.0}\selectfont
+{\bfseries имя}&{\bfseries тип} &\multicolumn{1}{c|}{\bfseries предназначение}  \\ \hline
+#2
+\end{tabular}
+\end{table}
+}
+\newcommand{\ftab}[1]{
+ представлены в таблице \ref{#1}
+}
+\newcommand{\elist}[1]{
+\newcounter{N}
+\suppressfloats[t]
+\begin{list}{\arabic{N}.}{\itemindent 1cm\addtolength{\itemindent}{\labelwidth}\listparindent 1.0cm\leftmargin 0cm\usecounter{N}}
+
+#1
+\end{list}
+}
+\newcommand{\prog}[2]{
+\fontencoding{T2A}
+\lstset{basicstyle=\tiny\fontsize{10}{12}\crfamily,keywordstyle=\bfseries,commentstyle=\itshape,identifierstyle=,stringstyle=\slshape}
+\lstinputlisting[inputencoding=utf8/cp1251,language=#1]{#2}
+}
+
+\makeatletter
+\renewcommand{\@oddfoot}{{\quad\hfill\quad}}
+\renewcommand{\@evenfoot}{{\quad\hfill\quad}}
+\renewcommand{\@dotsep}{0.5cm}
+\makeatother
+\newcommand{\ssec}[1]{\section{#1}\hspace*{\parindent}}
+\newcommand{\ssecO}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}\hspace*{\parindent}} 
+ \renewcommand{\cftdot}{.}
+\begin{document}
+\selectlanguage{russian}
+\maketitle {БЫСТРОЕ ПРЕОБРАЗОВАНИЕ ФУРЬЕ}
+\ssec{Аннотация}
+\normalfont
+Данная   работа   является   завершающей   при   изучении   курса 
+"Программирование   на   языках   высокого   уровня".   В   ней   демонстрируются 
+навыки, приобретенные за все время изучения данной дисциплины.
+ 
+В данной работе на языке программирования Delphi 7 с использованием концепций объектно-ориентированного программирования было разработано приложение, которое распознаёт ноты в файлах формата WAV, и записывает их в файл формата MIDI. Для этого используется быстрое преобразование Фурье -   алгоритм быстрого вычисления дискретного преобразования Фурье, которое позволяет разложить звуковую волну, записанную в исходном файле, на элементарные составляющие — гармонические колебания с разными частотами. Далее после анализа этих гармоник мы и получаем ноты, которые записываются в выходной файл.
+
+Структура работы состоит из оглавления, собственно раздела о программе и численном методе , выводов по работе и списка использованной литературы.
+
+В основном разделе производится содержательное описание задачи, её математическая формулировка и обсуждение, даллее следует описание структур данных, описание алгоритма и его разработка. После этого описываются структуры данных и функции, используемые в программе, и приводится её текст. После этого приводится умозрительные результаты при решении программой тестовой задачи, собственно решение программой задачи, и выводы по полученным программой результатам.
+
+Итого, в работе содержится 74 страниц, 9 рисунков и 7 таблиц.
+\end{document}
